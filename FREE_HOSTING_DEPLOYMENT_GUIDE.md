@@ -12,7 +12,7 @@ GitHub Pages gives you free, enterprise-grade static hosting with automatic SSL 
 1. **Create a Free GitHub Account**: Go to [github.com](https://github.com/) if you don't already have one.
 2. **Create a New Repository**:
    - Click the **+** (plus) icon in the top right &rarr; **New repository**.
-   - Name it: `camvision-tech` (or `username.github.io` if you want it on your root domain).
+   - Name it: `ISP-Tuning` (or `username.github.io` if you want it on your root domain).
    - Set visibility to **Public**.
    - Click **Create repository**.
 3. **Push / Upload your code**:
@@ -22,7 +22,7 @@ GitHub Pages gives you free, enterprise-grade static hosting with automatic SSL 
      git add .
      git commit -m "Launch CamVision Tech website"
      git branch -M main
-     git remote add origin https://github.com/<YOUR-USERNAME>/camvision-tech.git
+     git remote add origin https://github.com/<YOUR-USERNAME>/ISP-Tuning.git
      git push -u origin main
      ```
    - *Alternative (No Git command line)*: You can click **"Upload an existing file"** in GitHub and drag the workspace files (`index.html`, `css/`, `js/`, `assets/`) straight into the browser.
@@ -31,7 +31,7 @@ GitHub Pages gives you free, enterprise-grade static hosting with automatic SSL 
    - Under **Build and deployment** &rarr; **Source**: select **Deploy from a branch**.
    - Under **Branch**: select `main` and folder `/ (root)`, then click **Save**.
 5. **Done!** Within 60 seconds, your site will be live at:
-   `https://<YOUR-USERNAME>.github.io/camvision-tech/`
+   `https://<YOUR-USERNAME>.github.io/ISP-Tuning/`
 
 *(Optional Free Custom Domain)*: If you purchase a domain like `camvisiontech.com` ($10/yr on Cloudflare/Namecheap), enter it under **Custom domain** in GitHub Pages settings, and GitHub will automatically generate a free SSL certificate!
 
@@ -61,7 +61,7 @@ Cloudflare Pages offers unlimited bandwidth and 100% free hosting.
 
 ## 🔗 How to Connect the Website to Your LinkedIn Page
 
-Now that your website has a free live URL (e.g. `https://your-username.github.io/camvision-tech/` or `https://camvisiontech.com`), add it to LinkedIn to maximize inbound leads:
+Now that your website has a free live URL (e.g. `https://<YOUR-USERNAME>.github.io/ISP-Tuning/` or `https://camvisiontech.com`), add it to LinkedIn to maximize inbound leads:
 
 ### 1. Add to your LinkedIn Company Page:
 1. Open LinkedIn and go to your **CamVision Tech** Company Page admin view.
