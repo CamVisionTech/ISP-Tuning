@@ -1,0 +1,5 @@
+# Antigravity temporary files and logs
+.system_generated/
+*.log
+.DS_Store
+Thumbs.db

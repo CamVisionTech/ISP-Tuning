@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CamVision Tech | Camera ISP & Image Quality Engineering for Hardware Startups</title>
+  <meta name="description" content="On-demand Camera ISP & Image Quality (IQ) engineering for robotics, IoT, and embedded hardware startups. 3A tuning, color science, sensor bring-up, and $250 Quick IQ Triage.">
+  <meta name="keywords" content="Camera ISP Tuning, Image Quality Tuning, 3A Tuning, Qualcomm Chromatix, Ambarella ISP, Rockchip Camera, Sony Starvis, Sensor Bring-up, Imatest Benchmarking">
+  <meta name="author" content="CamVision Tech">
+
+  <!-- Open Graph / LinkedIn Sharing Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://camvisiontech.com/">
+  <meta property="og:title" content="CamVision Tech | Camera ISP & Image Quality Engineering for Startups">
+  <meta property="og:description" content="Stop wrestling with washed-out camera prototypes. Production-grade Camera ISP tuning, 3A optimization, and lab testing on agile, budget-friendly sprints.">
+  <meta property="og:image" content="assets/banner.jpg">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CamVision Tech | Camera ISP Tuning for Hardware Startups">
+  <meta name="twitter:description" content="On-demand 3A tuning, color science, and RAW sensor bring-up with zero agency overhead.">
+  <meta name="twitter:image" content="assets/banner.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement" id="top-bar">
+    <div class="container top-announcement-content">
+      <span class="pulse-dot"></span>
+      <span class="announcement-text"><strong>Now Booking Sprint Milestones</strong> • 1-Day Quick IQ Triage ($250) • Zero Agency Overhead</span>
+      <a href="#pricing" class="announcement-link">View Packages &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Primary Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-link">
+        <img src="assets/logo.jpg" alt="CamVision Tech Logo" class="brand-logo" width="42" height="42">
+        <div class="brand-info">
+          <span class="brand-name">CamVision <span class="brand-accent">Tech</span></span>
+          <span class="brand-tagline">Camera ISP &amp; IQ Engineering</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#slider-section" class="nav-link">Before &amp; After IQ</a></li>
+          <li><a href="#triage-tool" class="nav-link">IQ Diagnosis Tool</a></li>
+          <li><a href="#services" class="nav-link">ISP Services</a></li>
+          <li><a href="#platforms" class="nav-link">Platforms</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- LinkedIn Company Page Link -->
+        <a href="https://www.linkedin.com/company/camvision-tech/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-icon" id="header-linkedin-btn" title="Visit our LinkedIn Page">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.78c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/>
+          </svg>
+          <span class="btn-text">LinkedIn</span>
+        </a>
+
+        <!-- Primary CTA -->
+        <a href="#contact" class="btn btn-primary" id="header-cta-btn">
+          <span>Get $250 Triage</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main id="main-content">
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-glow"></div>
+      <div class="hero-grid-pattern"></div>
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="badge-icon">⚡</span>
+            <span>On-Demand Imaging Lab For Hardware Startups</span>
+          </div>
+
+          <h1 class="hero-title">
+            Stop Launching <span class="gradient-text">Washed-Out</span> Cameras.
+          </h1>
+
+          <p class="hero-description">
+            Your firmware and mechanical engineers built great hardware, but default sensor registers leave images green-shifted, AE hunting, and night video noisy. Big imaging consultancies demand $25k+ retainers. <strong>CamVision Tech delivers production-grade Camera ISP &amp; 3A tuning on agile, cost-conscious sprints.</strong>
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary btn-lg" id="hero-primary-cta">
+              <span>Request $250 Quick IQ Triage</span>
+              <svg class="arrow-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+
+            <a href="#slider-section" class="btn btn-outline btn-lg" id="hero-secondary-cta">
+              <svg class="play-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+              </svg>
+              <span>Inspect Before vs. After</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">24hr</span>
+              <span class="stat-label">Frame Triage Turnaround</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">&Delta;E &lt; 1.8</span>
+              <span class="stat-label">Color Science Precision</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">2-3 Wks</span>
+              <span class="stat-label">Average Sprint Time</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">$0</span>
+              <span class="stat-label">Agency Markup or Fluff</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Feature Card -->
+        <div class="hero-visual">
+          <div class="hero-preview-frame">
+            <div class="preview-header">
+              <div class="preview-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="preview-title-bar">
+                <span class="mono-code">ISP_PIPELINE_TUNER // QUALCOMM_SPECTRA_CHROMATIX</span>
+              </div>
+              <span class="badge-live">LIVE DEMO</span>
+            </div>
+            <div class="preview-body">
+              <img src="assets/lab_tuned.jpg" alt="Tuned ISP Output Sample" class="hero-main-img" id="hero-preview-img">
+              <div class="preview-overlay-tag">
+                <span class="tag-title">Calibrated 3A + Custom CCM</span>
+                <span class="tag-meta">Imatest Tested &bull; D65 Calibrated Lightbox</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Partner Ticker -->
+      <div class="partners-ticker-section">
+        <div class="container">
+          <p class="ticker-label">SUPPORTED SILICON, IMAGE SENSORS &amp; LAB TESTING PROTOCOLS</p>
+          <div class="ticker-wrapper">
+            <div class="ticker-track">
+              <span class="ticker-item">Qualcomm Spectra / Chromatix</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">Ambarella CV-Series</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">Sony Starvis &amp; Pregius CMOS</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">Rockchip RV1126 / RK3588</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">NVIDIA Jetson / Argus</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">OmniVision PureCel</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">Raspberry Pi libcamera / PiSP</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">Imatest Master / ISO 12233</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">MediaTek Imagiq</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">ON Semi &amp; ISOCELL</span>
+              <span class="ticker-sep">&bull;</span>
+              <!-- Repeat for infinite marquee effect -->
+              <span class="ticker-item">Qualcomm Spectra / Chromatix</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">Ambarella CV-Series</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">Sony Starvis &amp; Pregius CMOS</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">Rockchip RV1126 / RK3588</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">NVIDIA Jetson / Argus</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">OmniVision PureCel</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">Raspberry Pi libcamera / PiSP</span>
+              <span class="ticker-sep">&bull;</span>
+              <span class="ticker-item">Imatest Master / ISO 12233</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Before / After Image Quality Comparison Slider -->
+    <section class="section comparison-section" id="slider-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">INTERACTIVE PROOF OF CAPABILITY</div>
+          <h2 class="section-title">See the Real Difference: <span class="gradient-text">Default vs. Tuned ISP</span></h2>
+          <p class="section-subtitle">
+            Slide horizontally to see how our calibrated register pipelines correct nasty color casts, stabilize AWB, expand dynamic range, and eliminate low-light noise artifacts.
+          </p>
+        </div>
+
+        <!-- Scenario Switcher Tabs -->
+        <div class="scenario-tabs-container">
+          <div class="scenario-tabs" role="tablist">
+            <button class="scenario-tab active" id="tab-scenario-lab" data-scenario="lab" role="tab" aria-selected="true">
+              <svg class="tab-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.814 14.773 2.149 18 4.828 18h10.344c2.679 0 4.014-3.227 2.121-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.17.68H8.264a4 4 0 00-2.17-.68l1.027-1.028A3 3 0 008 8.172z" clip-rule="evenodd"/>
+              </svg>
+              <span>Scenario 1: Indoor LED &amp; Color Science (Robotics Lab)</span>
+            </button>
+            <button class="scenario-tab" id="tab-scenario-night" data-scenario="night" role="tab" aria-selected="false">
+              <svg class="tab-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+              </svg>
+              <span>Scenario 2: Low-Light 2-Lux &amp; 3DNR (Night Surveillance)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Slider Component Card -->
+        <div class="comparison-card">
+          <div class="slider-wrapper" id="comparison-slider" tabindex="0" aria-label="Before and after image comparison slider. Use left and right arrow keys to adjust.">
+            <!-- Tuned (After) Image - Background Base -->
+            <div class="image-layer tuned-layer">
+              <img src="assets/lab_tuned.jpg" alt="Calibrated Tuned ISP Camera Output" class="slider-image" id="tuned-img">
+              <div class="layer-pill pill-tuned">
+                <span class="pill-dot green"></span>
+                <span>TUNED BY CAMVISION TECH</span>
+              </div>
+            </div>
+
+            <!-- RAW (Before) Image - Clipped Top Layer -->
+            <div class="image-layer raw-layer" id="raw-layer">
+              <img src="assets/lab_raw.jpg" alt="Uncalibrated Raw Camera Sensor Output" class="slider-image" id="raw-img">
+              <div class="layer-pill pill-raw">
+                <span class="pill-dot red"></span>
+                <span>DEFAULT SENSOR REGISTERS</span>
+              </div>
+            </div>
+
+            <!-- Draggable Divider Handle -->
+            <div class="slider-handle" id="slider-handle">
+              <div class="handle-line"></div>
+              <div class="handle-thumb">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>
+                </svg>
+              </div>
+              <div class="handle-line"></div>
+            </div>
+          </div>
+
+          <!-- Slider Technical Diagnosis Summary Bar -->
+          <div class="comparison-details" id="comparison-details">
+            <div class="delta-box delta-raw">
+              <div class="delta-header">
+                <span class="delta-badge red">BEFORE: Default Drivers</span>
+              </div>
+              <ul class="delta-list" id="delta-before-list">
+                <li>❌ Uncalibrated Gray-World AWB causes severe green/yellow tint under commercial phosphor LEDs.</li>
+                <li>❌ Blown-out window highlights due to missing local tone mapping (LTM) &amp; gamma curve clipping.</li>
+                <li>❌ Washed-out Macbeth chart color patches with Delta E &gt; 9.4 error.</li>
+                <li>❌ Murky dark shadow contrast with noisy sensor black-level offset.</li>
+              </ul>
+            </div>
+
+            <div class="delta-box delta-tuned">
+              <div class="delta-header">
+                <span class="delta-badge green">AFTER: CamVision Calibrated ISP</span>
+              </div>
+              <ul class="delta-list" id="delta-after-list">
+                <li>✅ Custom multi-illuminant AWB boundary polygon with calibrated D65/TL84/A locus.</li>
+                <li>✅ Wide Dynamic Range (WDR) tone mapping recovering crisp outdoor window highlights.</li>
+                <li>✅ Custom 3x3 Color Correction Matrix (CCM) calibrated to Delta E &lt; 1.6 against Macbeth chart.</li>
+                <li>✅ Precise Black Level Correction (BLC) and 2DNR/3DNR texture preservation.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive "Quick IQ Triage" Diagnosis Tool -->
+    <section class="section triage-section" id="triage-tool">
+      <div class="container">
+        <div class="triage-card">
+          <div class="triage-header">
+            <div class="badge-pill">INTERACTIVE DIAGNOSTIC ENGINE</div>
+            <h2 class="triage-title">What is Broken in Your Camera Pipeline?</h2>
+            <p class="triage-subtitle">
+              Select your prototype's hardware stack and current visual defects to instantly receive our technical diagnosis and recommended remedy.
+            </p>
+          </div>
+
+          <div class="triage-grid">
+            <!-- Selector Controls -->
+            <div class="triage-controls">
+              <!-- Step 1: SoC Platform -->
+              <div class="form-group">
+                <label for="triage-soc" class="form-label">
+                  <span class="step-num">1</span> What is your Processor / ISP SoC?
+                </label>
+                <select id="triage-soc" class="form-select">
+                  <option value="qualcomm">Qualcomm (Snapdragon / Spectra / Chromatix)</option>
+                  <option value="ambarella">Ambarella (CV25, CV22, CV5, etc.)</option>
+                  <option value="rockchip">Rockchip (RV1126, RV1109, RK3588, etc.)</option>
+                  <option value="jetson">NVIDIA Jetson (Orin, Nano, Xavier / Argus)</option>
+                  <option value="rpi">Raspberry Pi (libcamera / PiSP / CM4 / CM5)</option>
+                  <option value="other">Other Linux V4L2 / Mediatek / NXP</option>
+                </select>
+              </div>
+
+              <!-- Step 2: Image Sensor -->
+              <div class="form-group">
+                <label for="triage-sensor" class="form-label">
+                  <span class="step-num">2</span> Which CMOS Image Sensor is mounted?
+                </label>
+                <select id="triage-sensor" class="form-select">
+                  <option value="sony">Sony (IMX415, IMX585, IMX678, Starvis / Pregius)</option>
+                  <option value="omnivision">OmniVision (OV48B, OS08A20, OV9281, etc.)</option>
+                  <option value="onsemi">ON Semi (AR0234, AR0821, AR0521)</option>
+                  <option value="samsung">Samsung ISOCELL</option>
+                  <option value="custom">Other / Custom Global/Rolling Shutter Sensor</option>
+                </select>
+              </div>
+
+              <!-- Step 3: Main Defect Symptom -->
+              <div class="form-group">
+                <label for="triage-defect" class="form-label">
+                  <span class="step-num">3</span> What is your primary image quality defect?
+                </label>
+                <select id="triage-defect" class="form-select">
+                  <option value="awb_cast">Sickly green, yellow, or pink color cast under indoor LED lights</option>
+                  <option value="night_ghosting">Night/low-light video has heavy noise or moving objects turn into blurry ghosts</option>
+                  <option value="hdr_clipping">Harsh contrast: windows/skies blown out or dark areas completely crushed</option>
+                  <option value="ae_hunting">Auto-Exposure flickers or hunts repeatedly when scene lighting shifts</option>
+                  <option value="yolo_drop">Edge AI (YOLO / Object Detection) confidence scores drop sharply</option>
+                </select>
+              </div>
+
+              <button class="btn btn-primary btn-block" id="btn-recalculate-triage">
+                <span>Update Technical Diagnosis &rarr;</span>
+              </button>
+            </div>
+
+            <!-- Diagnostic Results Panel -->
+            <div class="triage-result-panel" id="triage-result-panel">
+              <div class="result-header">
+                <span class="status-indicator">DIAGNOSIS READY</span>
+                <span class="result-code mono-code" id="result-code">ERR_AWB_LED_LOCUS_CLIP</span>
+              </div>
+
+              <h3 class="result-title" id="result-title">AWB Illuminant Polygon Failure</h3>
+              
+              <div class="result-body">
+                <div class="result-section">
+                  <span class="result-label">Root Cause:</span>
+                  <p class="result-text" id="result-cause">
+                    Default driver tables use generic blackbody locus curves. Commercial phosphor LEDs have sharp 450nm blue and yellow spikes that fall outside standard curves, confusing the AWB algorithm into over-amplifying green gain.
+                  </p>
+                </div>
+
+                <div class="result-section">
+                  <span class="result-label">Recommended ISP Tuning Action:</span>
+                  <p class="result-text" id="result-action">
+                    Calibrate custom chromaticity bounding polygons under D65, TL84, CWF, and 4000K LED in a light booth. Build smooth multi-illuminant weighting tables in your platform's register schema.
+                  </p>
+                </div>
+
+                <div class="result-meta-grid">
+                  <div class="meta-item">
+                    <span class="meta-label">Recommended Service:</span>
+                    <span class="meta-value highlight" id="result-service">$250 Quick IQ Triage or 2-Wk Sprint</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Est. Turnaround:</span>
+                    <span class="meta-value" id="result-time">24 Hours (Triage) / 10 Days (Sprint)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="result-footer">
+                <a href="#contact" class="btn btn-primary btn-block" id="result-cta-btn">
+                  <span>Send Your Frames for $250 Audit &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core ISP Tuning Services -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">END-TO-END IMAGING CAPABILITIES</div>
+          <h2 class="section-title">Comprehensive Camera ISP Services <span class="gradient-text">Built for Hardware Teams</span></h2>
+          <p class="section-subtitle">
+            From raw Bayer sensor bring-up to objective Imatest certification, we tune every stage of the hardware ISP pipeline.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1: RAW Sensor Bring-Up -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+            </div>
+            <h3 class="service-title">RAW Sensor Bring-Up &amp; Calibration</h3>
+            <p class="service-desc">
+              Get clean raw Bayer frames into your pipeline before tuning begins. We calibrate initial sensor front-end stages to eliminate optical and analog artifacts.
+            </p>
+            <ul class="service-bullets">
+              <li><strong>Lens Shading Correction (LSC):</strong> Optical fall-off &amp; color shading grid.</li>
+              <li><strong>Defect Pixel Correction (DPC):</strong> Hot/dead pixel dynamic masking.</li>
+              <li><strong>Black Level Correction (BLC):</strong> Temperature-compensated pedestal.</li>
+            </ul>
+          </div>
+
+          <!-- Service 2: 3A Algorithm Optimization -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 3v18M3 12h18"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <h3 class="service-title">3A Algorithm Optimization (AE/AWB/AF)</h3>
+            <p class="service-desc">
+              Eliminate hunting, oscillation, and unnatural color drift. We tune 3A control loops to lock in focus and exposure quickly under dynamic ambient conditions.
+            </p>
+            <ul class="service-bullets">
+              <li><strong>Auto-Exposure (AE):</strong> &lt;300ms settling time, 50Hz/60Hz anti-flicker.</li>
+              <li><strong>Auto-White-Balance (AWB):</strong> Multi-illuminant chromaticity boundaries.</li>
+              <li><strong>Auto-Focus (AF):</strong> Fast contrast/phase detection convergence curves.</li>
+            </ul>
+          </div>
+
+          <!-- Service 3: HDR & Local Tone Mapping -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+              </svg>
+            </div>
+            <h3 class="service-title">HDR, WDR &amp; Tone Mapping (LTM)</h3>
+            <p class="service-desc">
+              Tame challenging high-contrast scenes. Prevent blown-out skies while lifting deep shadows without introducing haloing or amplified noise.
+            </p>
+            <ul class="service-bullets">
+              <li><strong>Staggered Multi-Exposure HDR:</strong> Clean short/long frame merging.</li>
+              <li><strong>Dual Conversion Gain (DCG):</strong> Native high/low gain switching.</li>
+              <li><strong>Local Tone Mapping (LTM):</strong> Natural contrast preservation.</li>
+            </ul>
+          </div>
+
+          <!-- Service 4: Color Science & CCM -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Color Science &amp; Custom CCM (Delta E &lt; 1.8)</h3>
+            <p class="service-desc">
+              Deliver true-to-life skin tones, accurate product colors, and brand-tailored color profiles calibrated against ISO 24-patch and 140-patch charts.
+            </p>
+            <ul class="service-bullets">
+              <li><strong>3x3 Color Correction Matrices:</strong> Tailored per illuminant (D65/TL84/A).</li>
+              <li><strong>3D LUT &amp; Hue/Saturation:</strong> Surgical vector color control.</li>
+              <li><strong>Custom Gamma Curves:</strong> Pleasing highlight rolloff and midtone punch.</li>
+            </ul>
+          </div>
+
+          <!-- Service 5: 2DNR & 3DNR Noise Filtering -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Noise vs. Texture (2DNR &amp; 3DNR)</h3>
+            <p class="service-desc">
+              Eliminate the "waxy" smeared look and ghosting on moving objects. We calibrate spatial and temporal noise filters to preserve critical edge detail.
+            </p>
+            <ul class="service-bullets">
+              <li><strong>Motion-Adaptive 3DNR:</strong> Heavy filtering on static areas, sharp on motion.</li>
+              <li><strong>Bilateral Spatial 2DNR:</strong> Low-frequency luma/chroma smoothing.</li>
+              <li><strong>Bitrate Optimization:</strong> Cleaner video reduces H.264/H.265 bitrate by 20%+.</li>
+            </ul>
+          </div>
+
+          <!-- Service 6: Edge AI Pre-Processing -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3 class="service-title">ISP Tuning for Computer Vision &amp; Edge AI</h3>
+            <p class="service-desc">
+              Cameras tuned for human eyes often hurt neural networks. We optimize ISP parameters specifically to maximize YOLO/SSD object detection confidence and SLAM accuracy.
+            </p>
+            <ul class="service-bullets">
+              <li><strong>AI mAP Optimization:</strong> Preserving high-frequency gradient features.</li>
+              <li><strong>Distortion Unwarping:</strong> Lens calibration for visual odometry.</li>
+              <li><strong>OCR &amp; Barcode Tuning:</strong> High-contrast edge isolation under glare.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supported Silicon & Lab Ecosystem -->
+    <section class="section platforms-section" id="platforms">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">EXTENSIVE HARDWARE COMPATIBILITY</div>
+          <h2 class="section-title">Silicon Platforms &amp; <span class="gradient-text">Lab Standards</span></h2>
+          <p class="section-subtitle">
+            We work directly with your embedded registers, vendor header files, and lab calibration charts.
+          </p>
+        </div>
+
+        <div class="platforms-grid">
+          <!-- Column 1: Silicon & SoCs -->
+          <div class="platform-col">
+            <h3 class="col-title">
+              <span class="col-icon">💻</span> Supported Processors &amp; ISPs
+            </h3>
+            <div class="badge-tag-cloud">
+              <span class="tag-pill">Qualcomm Spectra (Chromatix)</span>
+              <span class="tag-pill">Ambarella CV2x / CV5x</span>
+              <span class="tag-pill">Rockchip RV1126 / RV1109</span>
+              <span class="tag-pill">Rockchip RK3588 / RK3568</span>
+              <span class="tag-pill">NVIDIA Jetson (Argus / Libargus)</span>
+              <span class="tag-pill">Raspberry Pi (libcamera / PiSP)</span>
+              <span class="tag-pill">MediaTek Imagiq</span>
+              <span class="tag-pill">Allwinner &amp; Ingenic</span>
+              <span class="tag-pill">NXP i.MX8 / i.MX9</span>
+              <span class="tag-pill">Linux V4L2 Subsystems</span>
+            </div>
+
+            <h3 class="col-title" style="margin-top: 2rem;">
+              <span class="col-icon">📷</span> Image Sensors Handled
+            </h3>
+            <div class="badge-tag-cloud">
+              <span class="tag-pill">Sony Starvis &amp; Starvis 2</span>
+              <span class="tag-pill">Sony Pregius Global Shutter</span>
+              <span class="tag-pill">OmniVision PureCel Plus</span>
+              <span class="tag-pill">ON Semi (AR series)</span>
+              <span class="tag-pill">Samsung ISOCELL</span>
+              <span class="tag-pill">SmartSens CMOS</span>
+            </div>
+          </div>
+
+          <!-- Column 2: Lab Protocols & Metrics -->
+          <div class="platform-col">
+            <h3 class="col-title">
+              <span class="col-icon">🔬</span> Lab Equipment &amp; Test Protocols
+            </h3>
+            <ul class="lab-features-list">
+              <li>
+                <strong>Imatest Master Suite:</strong> Objective MTF50 sharpness, SFR, SNR, and Step Chart dynamic range measurement.
+              </li>
+              <li>
+                <strong>Calibrated Multi-Illuminant Light Booth:</strong> Standardized testing under D65 (Daylight), TL84 (Store LED), Illuminant A (Tungsten 2856K), and Commercial 4000K LED.
+              </li>
+              <li>
+                <strong>Test Target Charts:</strong> ISO 12233 resolution charts, 24-patch X-Rite ColorChecker, TE42 multi-purpose chart, and low-light Lux meters.
+              </li>
+              <li>
+                <strong>Deliverable Deliveries:</strong> Complete parameter header dumps, tuning documentation, and before/after objective verification reports.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transparent Startup Pricing -->
+    <section class="section pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">STARTUP-FRIENDLY &bull; TRANSPARENT</div>
+          <h2 class="section-title">Zero Agency Markup. <span class="gradient-text">Sprint-Based Pricing.</span></h2>
+          <p class="section-subtitle">
+            No $25,000 corporate retainers. Choose a 1-day quick audit or a fast 2-week sprint to get demo-ready.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Tier 1: $250 Quick Triage -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <span class="tier-name">1-Day Quick IQ Triage</span>
+              <div class="tier-price">
+                <span class="currency">$</span>
+                <span class="amount">250</span>
+                <span class="period">flat fee</span>
+              </div>
+              <p class="tier-desc">The fastest, lowest-risk way to know exactly what is broken in your prototype's image pipeline.</p>
+            </div>
+            
+            <ul class="pricing-features">
+              <li><strong>Send 3–5 RAW frames</strong> or short video clips from your prototype.</li>
+              <li><strong>Objective Technical Diagnosis:</strong> We break down LSC, AWB, noise, and tone mapping bottlenecks.</li>
+              <li><strong>Register Action Plan:</strong> Exact recommendations your firmware team can implement right away.</li>
+              <li><strong>1-Day Turnaround</strong> guarantee.</li>
+            </ul>
+
+            <div class="pricing-footer">
+              <a href="#contact" class="btn btn-outline btn-block" data-package="triage">
+                <span>Book $250 Triage</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tier 2: 2-Week Sprint (Featured) -->
+          <div class="pricing-card featured">
+            <div class="featured-badge">MOST POPULAR FOR STARTUPS</div>
+            <div class="pricing-header">
+              <span class="tier-name">2-Week Tuning Sprint</span>
+              <div class="tier-price">
+                <span class="currency">$</span>
+                <span class="amount">Fixed</span>
+                <span class="period">milestone sprint</span>
+              </div>
+              <p class="tier-desc">End-to-end ISP calibration to bring your prototype from rough defaults to demo or investor-ready visual quality.</p>
+            </div>
+            
+            <ul class="pricing-features">
+              <li><strong>Complete 3A Stabilization:</strong> AE settling, multi-illuminant AWB, and AF convergence.</li>
+              <li><strong>Custom Color Science:</strong> Tailored CCM &amp; 3D LUT for Delta E &lt; 1.8 accuracy.</li>
+              <li><strong>Low-Light &amp; HDR:</strong> Calibrated 2DNR/3DNR temporal filters and Local Tone Mapping.</li>
+              <li><strong>Complete Parameter Deliverables:</strong> Header files, register dumps, and Imatest test scorecard.</li>
+              <li><strong>Direct Engineer Slack / Teams:</strong> Zero account managers.</li>
+            </ul>
+
+            <div class="pricing-footer">
+              <a href="#contact" class="btn btn-primary btn-block" data-package="sprint">
+                <span>Schedule Sprint Discovery</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tier 3: Launch & MP Advisory -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <span class="tier-name">Mass Production Advisory</span>
+              <div class="tier-price">
+                <span class="currency">Custom</span>
+                <span class="period">hourly or monthly</span>
+              </div>
+              <p class="tier-desc">Ongoing engineering support as you transition from engineering verification (EVT) into mass production.</p>
+            </div>
+            
+            <ul class="pricing-features">
+              <li><strong>Factory Line Calibration:</strong> Optical calibration procedures for manufacturing line test jigs.</li>
+              <li><strong>Multi-Sensor Unit-to-Unit Tuning:</strong> Compensating for sensor and lens manufacturing tolerances.</li>
+              <li><strong>Ad-Hoc Driver Troubleshooting:</strong> Linux V4L2 and register-level ISP debugging.</li>
+              <li><strong>Priority Engineering Access</strong> for critical investor demos and customer field trials.</li>
+            </ul>
+
+            <div class="pricing-footer">
+              <a href="#contact" class="btn btn-outline btn-block" data-package="advisory">
+                <span>Inquire for Advisory</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies / Proof of Capability -->
+    <section class="section case-studies-section" id="case-studies">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">REAL-WORLD IMPACT</div>
+          <h2 class="section-title">Case Studies &amp; <span class="gradient-text">Measurable Results</span></h2>
+          <p class="section-subtitle">
+            How we helped early-stage hardware teams fix critical imaging bottlenecks before shipment.
+          </p>
+        </div>
+
+        <div class="case-studies-grid">
+          <!-- Case 1: Night Vision Security Cam -->
+          <div class="case-card">
+            <div class="case-tag">SMART HOME &amp; IOT</div>
+            <h3 class="case-title">Low-Light Ghosting &amp; High Bitrate Fixed on 4MP Battery Cam</h3>
+            <p class="case-body">
+              <strong>The Problem:</strong> A hardware startup's battery-powered camera suffered severe motion ghosting on walking figures at night, and noise caused video bitrates to spike, killing battery life.
+            </p>
+            <div class="case-solution">
+              <strong>Tuning Applied:</strong> Separated 2D spatial and 3D temporal noise reduction. Configured motion-adaptive temporal weighting inside the Rockchip ISP so static backgrounds received aggressive filtering while moving subjects stayed sharp.
+            </div>
+            <div class="case-metric">
+              <span class="metric-val">-24%</span>
+              <span class="metric-text">H.265 Bitrate Reduction with 0 Motion Ghosting</span>
+            </div>
+          </div>
+
+          <!-- Case 2: Autonomous Mobile Robot (AMR) -->
+          <div class="case-card">
+            <div class="case-tag">ROBOTICS &amp; COMPUTER VISION</div>
+            <h3 class="case-title">Outdoor Warehouse Lighting Stability for Dual-Sensor Stereo Robot</h3>
+            <p class="case-body">
+              <strong>The Problem:</strong> Heavy indoor warehouse LED flicker and sudden outdoor sunlight transitions caused exposure oscillations and washed-out feature points, making V-SLAM lose tracking.
+            </p>
+            <div class="case-solution">
+              <strong>Tuning Applied:</strong> Implemented anti-flicker auto-exposure settling &lt;280ms, stabilized stereo pair exposure synchronization, and tuned tone curves to preserve edge gradients for YOLO object detection.
+            </div>
+            <div class="case-metric">
+              <span class="metric-val">+34%</span>
+              <span class="metric-text">Improvement in Downstream Optical Flow &amp; SLAM Tracking</span>
+            </div>
+          </div>
+
+          <!-- Case 3: Medical / Dental Scope -->
+          <div class="case-card">
+            <div class="case-tag">MEDICAL &amp; INSPECTION</div>
+            <h3 class="case-title">True-Color Delta E &lt; 1.6 Calibration for Handheld Inspection Scope</h3>
+            <p class="case-body">
+              <strong>The Problem:</strong> Non-standard mini ring LEDs caused severe pinkish skin and tissue distortion, failing clinical evaluation guidelines.
+            </p>
+            <div class="case-solution">
+              <strong>Tuning Applied:</strong> Characterized ring LED spectral distribution, generated custom multi-dimensional Color Correction Matrix (CCM), and built custom 3D LUT color grading curves.
+            </div>
+            <div class="case-metric">
+              <span class="metric-val">&Delta;E &lt; 1.6</span>
+              <span class="metric-text">Color Accuracy Certified against 140-Patch ColorChecker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Capture / Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-grid">
+            <div class="contact-info-side">
+              <div class="badge-pill">GET IN TOUCH</div>
+              <h2 class="contact-title">Ready to Fix Your Camera Image Quality?</h2>
+              <p class="contact-desc">
+                Whether you need a quick $250 IQ audit or a 2-week tuning sprint, send us a message. We collaborate directly engineer-to-engineer.
+              </p>
+
+              <div class="contact-perks">
+                <div class="perk-item">
+                  <span class="perk-icon">⚡</span>
+                  <div>
+                    <strong>24-Hour Response Guarantee</strong>
+                    <p>Fast feedback directly from an ISP engineer.</p>
+                  </div>
+                </div>
+                <div class="perk-item">
+                  <span class="perk-icon">🔒</span>
+                  <div>
+                    <strong>100% NDA Protected</strong>
+                    <p>Your sensor registers and prototype frames stay confidential.</p>
+                  </div>
+                </div>
+                <div class="perk-item">
+                  <span class="perk-icon">💼</span>
+                  <div>
+                    <strong>Direct LinkedIn Connection</strong>
+                    <p>Reach out directly via message on our official LinkedIn Page.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LinkedIn Direct Connect Badge -->
+              <div class="linkedin-direct-box">
+                <div class="linkedin-logo-badge">
+                  <img src="assets/logo.jpg" alt="CamVision Tech" class="linkedin-badge-img">
+                </div>
+                <div class="linkedin-text">
+                  <strong>CamVision Tech on LinkedIn</strong>
+                  <span>Follow for technical teardowns, ISP tuning guides &amp; updates.</span>
+                </div>
+                <a href="https://www.linkedin.com/company/camvision-tech/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="btn-linkedin-follow">
+                  Visit LinkedIn &rarr;
+                </a>
+              </div>
+            </div>
+
+            <!-- Interactive Inquiry / Quick Triage Form -->
+            <div class="contact-form-side">
+              <form id="contact-form" class="inquiry-form">
+                <h3 class="form-title">Request IQ Triage / Sprint Discovery</h3>
+                <p class="form-subtitle">Fill in your prototype details or email us directly at <a href="mailto:contact.camvisiontech@gmail.com" class="text-accent">contact.camvisiontech@gmail.com</a></p>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="form-name" class="form-label">Your Name</label>
+                    <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Vance" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-email" class="form-label">Work Email</label>
+                    <input type="email" id="form-email" class="form-input" placeholder="alex@hardwarestartup.com" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="form-platform" class="form-label">Hardware / SoC Platform</label>
+                    <input type="text" id="form-platform" class="form-input" placeholder="e.g. Qualcomm, Ambarella, Jetson">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-package" class="form-label">Interested Service</label>
+                    <select id="form-package" class="form-select">
+                      <option value="triage">$250 Quick IQ Triage (1-Day)</option>
+                      <option value="sprint">2-Week Tuning Sprint</option>
+                      <option value="advisory">Launch &amp; MP Advisory</option>
+                      <option value="other">General Engineering Inquiry</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-message" class="form-label">Describe your Camera &amp; Current Issue</label>
+                  <textarea id="form-message" class="form-textarea" rows="4" placeholder="Tell us about your sensor (e.g. Sony IMX415), current visual defects (colors, noise, AWB), and your timeline..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary btn-block" id="btn-submit-inquiry">
+                    <span>Send Inquiry &amp; Launch Email &rarr;</span>
+                  </button>
+                </div>
+
+                <p class="form-footnote">
+                  Prefer direct email? Click to send to <a href="mailto:contact.camvisiontech@gmail.com?subject=CamVision%20Tech%20IQ%20Triage%20Inquiry" class="text-accent">contact.camvisiontech@gmail.com</a>
+                </p>
+              </form>
+
+              <!-- Success Message Box -->
+              <div class="form-success-box" id="form-success" style="display: none;">
+                <div class="success-icon">✓</div>
+                <h4>Message Prepared!</h4>
+                <p>Your inquiry details have been composed. If your email client didn't open automatically, you can send it directly to <strong>contact.camvisiontech@gmail.com</strong>.</p>
+                <button class="btn btn-outline btn-sm" id="btn-reset-form">Send Another Message</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="brand-link">
+          <img src="assets/logo.jpg" alt="CamVision Tech Logo" class="brand-logo" width="36" height="36">
+          <span class="brand-name">CamVision <span class="brand-accent">Tech</span></span>
+        </div>
+        <p class="footer-bio">
+          On-demand Camera ISP and Image Quality engineering studio for robotics, IoT, and embedded hardware startups.
+        </p>
+      </div>
+
+      <div class="footer-nav-col">
+        <span class="footer-col-heading">Navigation</span>
+        <ul class="footer-links">
+          <li><a href="#slider-section">Before &amp; After IQ</a></li>
+          <li><a href="#triage-tool">IQ Diagnosis Tool</a></li>
+          <li><a href="#services">ISP Services</a></li>
+          <li><a href="#platforms">Supported Platforms</a></li>
+          <li><a href="#pricing">Startup Pricing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <span class="footer-col-heading">Specialties</span>
+        <ul class="footer-links">
+          <li><span>Sensor Bring-Up (LSC/DPC)</span></li>
+          <li><span>3A Tuning (AE/AWB/AF)</span></li>
+          <li><span>Color Correction &amp; 3D LUTs</span></li>
+          <li><span>2DNR/3DNR Temporal Filters</span></li>
+          <li><span>Imatest Lab Benchmarking</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <span class="footer-col-heading">Connect</span>
+        <ul class="footer-links">
+          <li>
+            <a href="https://www.linkedin.com/company/camvision-tech/" target="_blank" rel="noopener noreferrer" class="footer-linkedin-link">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.78c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/>
+              </svg>
+              <span>LinkedIn Page</span>
+            </a>
+          </li>
+          <li><a href="mailto:contact.camvisiontech@gmail.com">contact.camvisiontech@gmail.com</a></li>
+          <li><span class="text-dim">Global Remote Consulting</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright">&copy; 2026 CamVision Tech. All rights reserved. All trademarks and logos are property of their respective owners.</p>
+        <div class="footer-legal">
+          <span>100% Confidential &bull; Standard Mutual NDAs Honored</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
