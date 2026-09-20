@@ -79,7 +79,7 @@ body {
   overscroll-behavior-x: none;
   -webkit-overflow-scrolling: touch;
   overflow-wrap: break-word;
-  word-break: break-word;
+  word-break: normal;
 }
 
 /* Utilities */
@@ -312,6 +312,11 @@ body {
   align-items: center;
   gap: 1.8rem;
   list-style: none;
+  white-space: nowrap;
+}
+
+.main-nav .nav-list li {
+  white-space: nowrap;
 }
 
 .nav-link {
@@ -322,6 +327,8 @@ body {
   transition: color 0.2s ease;
   position: relative;
   padding: 0.3rem 0;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -673,6 +680,7 @@ body {
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .scenario-tab:hover {
@@ -1702,7 +1710,45 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+/* Intermediate Tablet / Compact Desktop Header */
+@media (max-width: 1220px) {
+  .brand-tagline {
+    display: none;
+  }
+
+  .main-nav .nav-list {
+    gap: 1.1rem;
+  }
+
+  .nav-link {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .main-nav .nav-list {
+    gap: 0.75rem;
+  }
+
+  .nav-link {
+    font-size: 0.82rem;
+  }
+
+  .header-actions .btn-secondary .btn-text {
+    display: none;
+  }
+
+  .header-actions .btn-secondary {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .header-actions .btn-primary {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 960px) {
   .main-nav {
     display: none; /* toggled via mobile menu */
     position: absolute;
@@ -1712,6 +1758,7 @@ body {
     background: #0a0e1a;
     border-bottom: 1px solid var(--border-light);
     padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   }
 
   .main-nav.open {
@@ -1721,7 +1768,16 @@ body {
   .main-nav .nav-list {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.4rem 0;
+    width: 100%;
+    display: block;
+    white-space: nowrap;
   }
 
   .mobile-toggle {
@@ -1731,6 +1787,9 @@ body {
   .header-actions .btn-primary {
     display: none;
   }
+}
+
+@media (max-width: 768px) {
 
   .hero-title {
     font-size: 2.2rem;
