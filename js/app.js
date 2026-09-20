@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormAndPricingIntegration();
   initMobileNav();
   initScrollSpy();
+  initHorizontalLock();
 });
 
 /* ==========================================================================
@@ -420,3 +421,19 @@ function initScrollSpy() {
     });
   }, { passive: true });
 }
+
+/* ==========================================================================
+   7. HORIZONTAL VIEWPORT LOCK (PREVENT HORIZONTAL SWAY ON MOBILE)
+   ========================================================================== */
+function initHorizontalLock() {
+  function enforceZeroX() {
+    if (window.scrollX !== 0) {
+      window.scrollTo(0, window.scrollY);
+    }
+  }
+  window.addEventListener('scroll', enforceZeroX, { passive: true });
+  window.addEventListener('orientationchange', () => {
+    setTimeout(enforceZeroX, 100);
+  });
+}
+
