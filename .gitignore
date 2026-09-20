@@ -4,3 +4,6 @@
 .DS_Store
 Thumbs.db
 *.zip
+
+# Confidential business strategy, sales templates, and internal notes
+internal_docs/
