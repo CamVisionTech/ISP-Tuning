@@ -60,13 +60,26 @@ html {
   color: var(--text-main);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  touch-action: pan-y;
+  overscroll-behavior-x: none;
 }
 
 body {
   background-color: var(--bg-darker);
   color: var(--text-main);
   line-height: 1.6;
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
+  touch-action: pan-y;
+  overscroll-behavior-x: none;
+  -webkit-overflow-scrolling: touch;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Utilities */
@@ -546,6 +559,8 @@ body {
   padding: 2.5rem 0 1rem;
   border-bottom: 1px solid var(--border-light);
   overflow: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 .ticker-label {
@@ -560,6 +575,8 @@ body {
 .ticker-wrapper {
   overflow: hidden;
   white-space: nowrap;
+  width: 100%;
+  max-width: 100%;
   mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
 }
@@ -626,6 +643,8 @@ body {
 
 .scenario-tabs {
   display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
   gap: 0.5rem;
   padding: 0.35rem;
   background: rgba(16, 23, 38, 0.9);
@@ -1716,8 +1735,69 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .triage-card, .contact-box {
-    padding: 1.5rem;
+  .container {
+    padding: 0 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .scenario-tabs-container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .scenario-tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .scenario-tab {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.8rem;
+    line-height: 1.35;
+    border-radius: var(--radius-sm);
+  }
+
+  .comparison-card {
+    padding: 0.85rem;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .preview-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .preview-title-bar {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .top-announcement-content {
+    font-size: 0.76rem;
+    text-align: center;
+    padding: 0.2rem 0.5rem;
   }
 
   .footer-container {
