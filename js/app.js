@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. COMPARISON SLIDER (MOUSE & TOUCH DRAG)
+   1. COMPARISON SLIDER (POINTER & TOUCH WITH PAGE DRAG PREVENTION)
    ========================================================================== */
 function initComparisonSlider() {
   const sliderWrapper = document.getElementById('comparison-slider');
@@ -28,65 +28,93 @@ function initComparisonSlider() {
   if (!sliderWrapper || !rawLayer || !sliderHandle) return;
 
   let isDragging = false;
+  let currentPercent = 50;
 
-  function setSliderPosition(x) {
+  function setSliderPosition(clientX) {
     const rect = sliderWrapper.getBoundingClientRect();
-    let offsetX = x - rect.left;
+    let offsetX = clientX - rect.left;
     
     // Clamp within 0% to 100%
     if (offsetX < 0) offsetX = 0;
     if (offsetX > rect.width) offsetX = rect.width;
 
-    const percentage = (offsetX / rect.width) * 100;
-    rawLayer.style.width = `${percentage}%`;
-    sliderHandle.style.left = `${percentage}%`;
+    currentPercent = (offsetX / rect.width) * 100;
+    const pctString = currentPercent.toFixed(2);
+
+    rawLayer.style.clipPath = `polygon(0 0, ${pctString}% 0, ${pctString}% 100%, 0 100%)`;
+    rawLayer.style.webkitClipPath = `polygon(0 0, ${pctString}% 0, ${pctString}% 100%, 0 100%)`;
+    sliderHandle.style.left = `${pctString}%`;
   }
 
-  // Mouse Events
-  sliderWrapper.addEventListener('mousedown', (e) => {
+  // Modern Unified Pointer Events (Mouse, Touch, Stylus)
+  sliderWrapper.addEventListener('pointerdown', (e) => {
     isDragging = true;
+    try {
+      sliderWrapper.setPointerCapture(e.pointerId);
+    } catch (_) {}
     setSliderPosition(e.clientX);
+    e.preventDefault();
   });
 
-  window.addEventListener('mousemove', (e) => {
+  sliderWrapper.addEventListener('pointermove', (e) => {
     if (!isDragging) return;
     setSliderPosition(e.clientX);
+    e.preventDefault();
   });
 
-  window.addEventListener('mouseup', () => {
+  function endPointerDrag(e) {
+    if (!isDragging) return;
     isDragging = false;
-  });
+    try {
+      sliderWrapper.releasePointerCapture(e.pointerId);
+    } catch (_) {}
+  }
 
-  // Touch Events (Mobile & Tablet)
+  sliderWrapper.addEventListener('pointerup', endPointerDrag);
+  sliderWrapper.addEventListener('pointercancel', endPointerDrag);
+
+  // Dedicated Mobile Touch Handlers (Prevent mobile page scroll/gesture)
   sliderWrapper.addEventListener('touchstart', (e) => {
     isDragging = true;
+    if (e.cancelable) e.preventDefault();
     if (e.touches.length > 0) {
       setSliderPosition(e.touches[0].clientX);
     }
-  }, { passive: true });
+  }, { passive: false });
 
-  window.addEventListener('touchmove', (e) => {
+  sliderWrapper.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
+    // CRITICAL: Prevent the browser from dragging/scrolling the page while sliding
+    if (e.cancelable) e.preventDefault();
     if (e.touches.length > 0) {
       setSliderPosition(e.touches[0].clientX);
     }
-  }, { passive: true });
+  }, { passive: false });
 
   window.addEventListener('touchend', () => {
     isDragging = false;
   });
 
+  window.addEventListener('touchcancel', () => {
+    isDragging = false;
+  });
+
   // Keyboard Accessibility
   sliderWrapper.addEventListener('keydown', (e) => {
-    const currentPercent = parseFloat(rawLayer.style.width) || 50;
     if (e.key === 'ArrowLeft') {
-      const next = Math.max(0, currentPercent - 5);
-      rawLayer.style.width = `${next}%`;
-      sliderHandle.style.left = `${next}%`;
+      currentPercent = Math.max(0, currentPercent - 5);
+      const pctString = currentPercent.toFixed(2);
+      rawLayer.style.clipPath = `polygon(0 0, ${pctString}% 0, ${pctString}% 100%, 0 100%)`;
+      rawLayer.style.webkitClipPath = `polygon(0 0, ${pctString}% 0, ${pctString}% 100%, 0 100%)`;
+      sliderHandle.style.left = `${pctString}%`;
+      e.preventDefault();
     } else if (e.key === 'ArrowRight') {
-      const next = Math.min(100, currentPercent + 5);
-      rawLayer.style.width = `${next}%`;
-      sliderHandle.style.left = `${next}%`;
+      currentPercent = Math.min(100, currentPercent + 5);
+      const pctString = currentPercent.toFixed(2);
+      rawLayer.style.clipPath = `polygon(0 0, ${pctString}% 0, ${pctString}% 100%, 0 100%)`;
+      rawLayer.style.webkitClipPath = `polygon(0 0, ${pctString}% 0, ${pctString}% 100%, 0 100%)`;
+      sliderHandle.style.left = `${pctString}%`;
+      e.preventDefault();
     }
   });
 }
