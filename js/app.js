@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initScrollSpy();
   initHorizontalLock();
+  initAnalyticsTracking();
 });
 
 /* ==========================================================================
@@ -192,6 +193,8 @@ function initScenarioSwitcher() {
       tabLab.classList.remove('active');
       tabLab.setAttribute('aria-selected', 'false');
     }
+
+    trackEvent('scenario_switched', { scenario: key });
   }
 
   tabLab.addEventListener('click', () => switchScenario('lab'));
@@ -330,6 +333,7 @@ function initFormAndPricingIntegration() {
       if (select && pkg) {
         select.value = pkg;
       }
+      trackEvent('pricing_plan_selected', { package: pkg });
     });
   });
 
@@ -357,6 +361,8 @@ function initFormAndPricingIntegration() {
       // Launch mailto
       const mailtoUrl = `mailto:contact.camvisiontech@gmail.com?subject=${subject}&body=${body}`;
       window.location.href = mailtoUrl;
+
+      trackEvent('lead_inquiry_submitted', { service: pkg, platform: platform });
 
       // Show success container
       form.style.display = 'none';
@@ -436,4 +442,41 @@ function initHorizontalLock() {
     setTimeout(enforceZeroX, 100);
   });
 }
+
+/* ==========================================================================
+   8. EVENT TELEMETRY & ANALYTICS TRACKING
+   ========================================================================== */
+function trackEvent(name, params = {}) {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', name, params);
+  }
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    console.log(`[Telemetry] ${name}:`, params);
+  }
+}
+
+function initAnalyticsTracking() {
+  // Track clicks to LinkedIn
+  const linkedinLinks = document.querySelectorAll('a[href*="linkedin.com"]');
+  linkedinLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      trackEvent('linkedin_click', {
+        link_url: link.href,
+        link_id: link.id || 'unnamed'
+      });
+    });
+  });
+
+  // Track primary CTA clicks ($250 Triage)
+  const triageCtas = document.querySelectorAll('a[href="#contact"], a[href="#pricing"]');
+  triageCtas.forEach(cta => {
+    cta.addEventListener('click', () => {
+      trackEvent('cta_click', {
+        cta_text: cta.textContent.trim().substring(0, 30),
+        cta_id: cta.id || 'unnamed'
+      });
+    });
+  });
+}
+
 
